@@ -31,7 +31,7 @@ const deleteExpiredAccounts = async () => {
 };
 
 // 定時任務：每 1 小時執行一次
-cron.schedule("0 */1 * * *", () => {
+cron.schedule("* * * * *", () => {
   deleteExpiredAccounts()
     .then((message) => {
       console.log(message);

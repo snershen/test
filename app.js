@@ -44,13 +44,13 @@ process.on("uncaughtException", (err) => {
 });
 
 // ? 連接資料庫
-// const DB = process.env.DATABASE.replace(
-//   "<password>",
-//   process.env.DATABASE_PASSWORD
-// );
+const DB = process.env.DATABASE.replace(
+  "<password>",
+  process.env.DATABASE_PASSWORD
+);
 
 mongoose
-  .connect("mongodb://localhost:27017")
+  .connect(DB)
   .then(() => console.log("資料庫連接成功"))
   .catch((err) => {
     console.log("MongoDB 連接失敗:", err);
@@ -62,7 +62,7 @@ deleteExpiredAccounts();
 // 引入自訂路由 routes
 const postsRouter = require("./routes/posts");
 var usersRouter = require("./routes/users");
-// const uploadRouter = require("./routes/upload");
+const uploadRouter = require("./routes/upload");
 // const emailRouter = require("./routes/email");
 // const announcementsRouter = require("./routes/announcements");
 
