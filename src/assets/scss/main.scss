@@ -1,0 +1,12 @@
+@import './vendor/bootstrap';
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+@import './base/base';
+
+@import './components/navbar';
+@import './components/productcard';
+@import './components/card';
+@import './components/form';
+@import './components/loading';
+
+@import './helpers/helpers'
